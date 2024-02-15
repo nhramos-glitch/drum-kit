@@ -6,7 +6,21 @@ for (var i = 0; i < buttons ; i++ ){
 
     var buttonInnerHTML = this.innerHTML;
 
-    switch (buttonInnerHTML) {
+    makeSound(buttonInnerHTML)
+
+    })
+}
+
+//Detecting Keyboard Press
+
+document.addEventListener("keydown", function(event){
+   makeSound(event.key)
+})
+
+
+function makeSound(key){
+
+    switch (key) {
         case "w":
             var tom1 = new Audio ("sounds/tom-1.mp3");
                 tom1.play();
@@ -45,7 +59,4 @@ for (var i = 0; i < buttons ; i++ ){
         default: console.log("test")
             break;
     }
-
-    })
 }
-
